@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="pl.edu.agh.to.library.presenter.MainPagePresenter"
+           prefHeight="400.0" prefWidth="600.0">
+    <stylesheets>
+        <URL value="@/styles/style.css"></URL>
+    </stylesheets>
+    <VBox spacing="10">
+        <HBox alignment="TOP_CENTER" spacing="10">
+            <Label fx:id="userLabel"/>
+            <HBox alignment="TOP_RIGHT" spacing="10">
+                <Button fx:id="logoutButton" visible="false" text="Wyloguj się" onAction="#handleLogoutClick"/>
+                <Button fx:id="loginButton" visible="false" text="Zaloguj się" onAction="#handleLoginClick"/>
+                <Button fx:id="adminPageButton" visible="false" text="Panel admina" onAction="#handleAdminPageClick"/>
+                <Button fx:id="userProfilePageButton" visible="false" text="Mój profil" onAction="#handleUserPageButtonClick"/>
+                <Button fx:id="librarianPageButton" visible="false" text="Panel bibliotekarza" onAction="#handleLibrarianPageClick"/>
+            </HBox>
+        </HBox>
+
+        <VBox alignment="CENTER" spacing="10">
+            <Button text="Lista książek" onAction="#handleBooksListClick"/>
+            <Button fx:id="addAuthorButton" visible="false" text="Dodaj autora" onAction="#handleAddAuthorClick"/>
+            <Button fx:id="addBookButton" visible="false" text="Dodaj książkę" onAction="#handleAddBookClick"/>
+        </VBox>
+    </VBox>
+
+</StackPane>

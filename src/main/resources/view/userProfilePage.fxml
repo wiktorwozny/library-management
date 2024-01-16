@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import java.net.URL?>
+<GridPane alignment="CENTER" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.agh.to.library.presenter.UserProfilePagePresenter">
+   <stylesheets>
+      <URL value="@/styles/style.css"></URL>
+   </stylesheets>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <VBox>
+         <HBox>
+            <children>
+               <VBox prefWidth="300.0">
+                  <children>
+                     <ImageView fx:id="avatarImageView" fitHeight="250.0" fitWidth="300.0" preserveRatio="true" />
+                     <VBox prefHeight="200.0" prefWidth="100.0">
+                        <children>
+                           <Label fx:id="emailLabel" alignment="CENTER" prefHeight="36.0" prefWidth="300.0" text="Label" textAlignment="CENTER">
+                              <VBox.margin>
+                                 <Insets bottom="30.0" top="10.0" />
+                              </VBox.margin>
+                              <font>
+                                 <Font size="15.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="roleLabel" alignment="CENTER" prefHeight="36.0" prefWidth="300.0" text="Label" textAlignment="CENTER">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </VBox>
+                  </children>
+               </VBox>
+               <VBox prefWidth="300.0">
+                  <children>
+                     <Button onAction="#handleBackButtonClick" mnemonicParsing="false" prefHeight="22.0" prefWidth="43.0" text="wróć" styleClass="backButton">
+                        <font>
+                           <Font size="10.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets left="256.0" />
+                        </VBox.margin>
+                     </Button>
+                     <Label prefHeight="50.0" text="Imię">
+                        <padding>
+                           <Insets left="10.0" />
+                        </padding>
+                        <font>
+                           <Font name="System Bold" size="20.0" />
+                        </font>
+                     </Label>
+                     <HBox prefHeight="38.0">
+                        <children>
+                           <Label fx:id="firstnameLabel" prefHeight="38.0" prefWidth="300.0" text="Label">
+                              <padding>
+                                 <Insets left="10.0" />
+                              </padding>
+                           </Label>
+                           <Button mnemonicParsing="false" onAction="#handleFirstnameButtonClick" prefHeight="25.0" text="zmień" />
+                        </children>
+                     </HBox>
+                     <Label prefHeight="50.0" text="Nazwisko">
+                        <padding>
+                           <Insets left="10.0" />
+                        </padding>
+                        <font>
+                           <Font name="System Bold" size="20.0" />
+                        </font>
+                     </Label>
+                     <HBox prefHeight="38.0">
+                        <children>
+                           <Label fx:id="lastnameLabel" prefHeight="38.0" prefWidth="300.0" text="Label">
+                              <padding>
+                                 <Insets left="10.0" />
+                              </padding>
+                           </Label>
+                           <Button mnemonicParsing="false" onAction="#handleLastnameButtonClick" prefHeight="25.0" text="zmień" />
+                        </children>
+                     </HBox>
+                     <Label prefHeight="26.0" prefWidth="300.0" text="historia wypożyczeń:">
+                        <padding>
+                           <Insets left="10.0" />
+                        </padding>
+                        <font>
+                           <Font size="10.0" />
+                        </font>
+                     </Label>
+                     <ScrollPane prefHeight="200.0" prefWidth="300.0">
+                        <content>
+                           <TableView fx:id="loanHistoryTableView" prefHeight="193.0" prefWidth="298.0">
+                              <columns>
+                                 <TableColumn fx:id="titleColumn" editable="false" prefWidth="60.00000077486038" text="Tytuł" />
+                                 <TableColumn fx:id="whenColumn" editable="false" prefWidth="68.79998397827148" text="Kiedy" />
+                                 <TableColumn fx:id="untilColumn" editable="false" prefWidth="76.79998779296875" text="Do kiedy" />
+                                 <TableColumn fx:id="returnedColumn" editable="false" prefWidth="91.20000305175779" text="Czy zwrócone" />
+                              </columns>
+                           </TableView>
+                        </content>
+                     </ScrollPane>
+
+                     <Button mnemonicParsing="false" onAction="#handleNotificationSettingsClick" prefHeight="25.0" text="Ustawienia powiadomień" />
+
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+
+         <HBox fx:id="chartsBox"/>
+      </VBox>
+   </children>
+</GridPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<?import java.net.URL?>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="pl.edu.agh.to.library.presenter.AddAuthorPagePresenter">
+    <stylesheets>
+        <URL value="@/styles/style.css"></URL>
+    </stylesheets>
+    <VBox alignment="CENTER" spacing="10">
+        <Label text="Wprowadź Autora" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+        <!-- Pierwsze pole tekstowe -->
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Imie" prefWidth="60"/>
+            <TextField fx:id="firstNameTextField" promptText="Podaj Imie" prefWidth="200"/>
+        </HBox>
+
+        <!-- Drugie pole tekstowe -->
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Nazwisko" prefWidth="60"/>
+            <TextField fx:id="lastNameTextField" promptText="Podaj Nazwisko" prefWidth="200"/>
+        </HBox>
+
+        <!-- Trzecie pole tekstowe -->
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Kraj" prefWidth="60"/>
+            <TextField fx:id="countryTextField" promptText="Podaj Kraj" prefWidth="200"/>
+        </HBox>
+
+        <Label fx:id="resultText"/>
+
+        <Button fx:id="addButton" text="Dodaj autora" onAction="#addAuthorHandler"/>
+
+        <Button text="Wróć" onAction="#handleBackButtonClick" styleClass="backButton"/>
+    </VBox>
+</GridPane>

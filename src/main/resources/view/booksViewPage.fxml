@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.net.URL?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="pl.edu.agh.to.library.presenter.BooksViewPagePresenter">
+    <stylesheets>
+        <URL value="@/styles/style.css"></URL>
+    </stylesheets>
+    <VBox spacing="10" alignment="TOP_CENTER">
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Autor:" />
+            <ComboBox fx:id="authorComboBox" promptText="Wybierz autora" />
+            <Label text="Język:" />
+            <ComboBox fx:id="languageComboBox" promptText="Wybierz język" />
+            <Label text="Gatunek:" />
+            <ComboBox fx:id="genreComboBox" promptText="Wybierz gatunek" />
+            <Button text="Szukaj" onAction="#searchBooks" />
+            <Button text="Reset" onAction="#resetFilters" />
+            <Button text="Wróć" onAction="#handleBackButtonClick" styleClass="backButton"/>
+            <Label text="Sortuj po:" />
+
+            <ComboBox fx:id="sortingComboBox" promptText="Wybierz rodzaj sortowania">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Ocena malejąco"/>
+                        <String fx:value="Ocena rosnąco"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </HBox>
+<!--        <ListView fx:id="booksListView" VBox.vgrow="ALWAYS">-->
+<!--        </ListView>-->
+        <ScrollPane >
+            <TilePane fx:id="booksList" alignment="CENTER"/>
+        </ScrollPane>
+        <HBox fx:id="hBox" alignment="CENTER">
+            <Button fx:id="leftButton" onAction="#handleLeftClick" text="←" />
+            <Label fx:id="pageCounter" />
+            <Button fx:id="rightButton" onAction="#handleRightClick" text="→" />
+        </HBox>
+    </VBox>
+</StackPane>

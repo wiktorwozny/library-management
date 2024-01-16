@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="pl.edu.agh.to.library.presenter.AddBookPagePresenter">
+    <stylesheets>
+        <URL value="@/styles/style.css"></URL>
+    </stylesheets>
+    <VBox alignment="CENTER" spacing="10">
+        <Label text="Wprowadź Książkę" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+        <!-- Pierwsze pole tekstowe -->
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Tytuł" prefWidth="60"/>
+            <TextField fx:id="titleField" promptText="Podaj Tytuł" prefWidth="200"/>
+        </HBox>
+
+        <!-- Drugie pole tekstowe -->
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Język" prefWidth="60"/>
+            <TextField fx:id="languageField" promptText="Podaj Język" prefWidth="200"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Liczba kopi" prefWidth="60"/>
+            <TextField fx:id="copiesField" promptText="Podaj Liczbę kopi" prefWidth="200"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Okładka" prefWidth="60"/>
+            <TextField fx:id="imageUrlField" promptText="Podaj link do okładki" prefWidth="200"/>
+        </HBox>
+
+        <!-- Trzecie pole tekstowe -->
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Autor" prefWidth="60"/>
+            <ComboBox fx:id="authorField" prefWidth="200"/>
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label text="Gatunki" prefWidth="60"/>
+            <ListView fx:id="genreListView" prefHeight="70.0" prefWidth="200.0" />
+        </HBox>
+
+        <Label fx:id="resultText"/>
+
+        <Button fx:id="addButton" text="Dodaj książkę" onAction="#addBookHandler" style="-fx-end-margin: 2px"/>
+
+        <Button text="Wróć" onAction="#handleBackButtonClick" styleClass="backButton"/>
+    </VBox>
+</GridPane>

@@ -1,0 +1,60 @@
+.root {
+    /*-fx-background-color: #f0f0f0; !* Kolor tła dla całej sceny *!*/
+    -fx-background-color: #d9f6f3;
+}
+.titled-pane> .content,.scroll-pane .viewport {
+    -fx-background-color: #d9f6f3;
+    -fx-text-fill: white;
+    -fx-background-radius: 5; /* Zaokrąglenie krawędzi */
+    -fx-border-radius: 5; /* Zaokrąglenie krawędzi */
+}
+.button {
+    -fx-background-color: #4CAF50; /* Kolor tła dla przycisków i pól tekstowych */
+    -fx-text-fill: white; /* Kolor tekstu */
+    -fx-background-radius: 5; /* Zaokrąglenie krawędzi */
+    -fx-border-radius: 5; /* Zaokrąglenie krawędzi */
+}
+.text-field {
+    -fx-background-color: #f5f5f5; /* Kolor tła dla przycisków i pól tekstowych */
+    -fx-text-fill: black; /* Kolor tekstu */
+    -fx-background-radius: 5; /* Zaokrąglenie krawędzi */
+    -fx-border-radius: 5; /* Zaokrąglenie krawędzi */
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* Kolor tła dla przycisków i pól tekstowych po najechaniu myszką */
+}
+.text-field:hover,.text-field:pressed {
+    -fx-background-color: #dedede; /* Kolor tła dla przycisków i pól tekstowych po najechaniu myszką */
+}
+
+.button:pressed {
+    -fx-background-color: #39843d; /* Kolor tła dla przycisków i pól tekstowych po naciśnięciu */
+}
+
+
+.combo-box .list-cell {
+    -fx-background-color: #4CAF50; /* Kolor tła dla rozwijanej listy ComboBox */
+    -fx-text-fill: white; /* Kolor tekstu w rozwijanej liście ComboBox */
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: #45a049; /* Kolor tła dla rozwijanej listy ComboBox po najechaniu myszką */
+}
+
+.combo-box .list-cell:pressed {
+    -fx-background-color: #39843d; /* Kolor tła dla rozwijanej listy ComboBox po naciśnięciu */
+}
+
+.backButton {
+    -fx-background-color: #e35858;
+    -fx-text-fill: #ffffff;
+}
+
+.backButton:hover{
+    -fx-background-color: #e02c2c;
+}
+
+.text-field .prompt-text {
+    -fx-text-fill: #ffffff;
+}

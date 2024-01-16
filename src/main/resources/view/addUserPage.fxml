@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="pl.edu.agh.to.library.presenter.AddUserPagePresenter">
+    <stylesheets>
+        <URL value="@/styles/style.css"></URL>
+    </stylesheets>
+    <VBox alignment="CENTER" spacing="10">
+        <Label text="Wprowadź użytkownika" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+        <!-- Pierwsze pole tekstowe -->
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Imie" prefWidth="60"/>
+            <TextField fx:id="firstNameField" promptText="Podaj Imie" prefWidth="200"/>
+        </HBox>
+
+        <!-- Drugie pole tekstowe -->
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Nazwisko" prefWidth="60"/>
+            <TextField fx:id="lastNameField" promptText="Podaj Nazwisko" prefWidth="200"/>
+        </HBox>
+
+        <!-- Trzecie pole tekstowe -->
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Email" prefWidth="60"/>
+            <TextField fx:id="emailField" promptText="Podaj email" prefWidth="200"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Role" prefWidth="60"/>
+            <ComboBox fx:id="RoleField" prefWidth="200">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Użytkownik"/>
+                        <String fx:value="Admin"/>
+                        <String fx:value="Bibliotekarz"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </HBox>
+
+        <Label fx:id="resultText" style="visibility: hidden"/>
+
+        <Button fx:id="addButton" text="Dodaj użytkownika" onAction="#handleButtonClick"/>
+
+        <Button text="Wróć" onAction="#handleBackButtonClick" styleClass="backButton"/>
+    </VBox>
+
+</StackPane>

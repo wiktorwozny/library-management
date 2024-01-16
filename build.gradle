@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.1-SNAPSHOT'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+group = 'pl.edu.agh.to'
+version = '0.0.1-SNAPSHOT'
+
+javafx {
+    version = "21.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
+    maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.xerial:sqlite-jdbc:3.40.1.0'
+    implementation 'org.hibernate.orm:hibernate-community-dialects:6.1.7.Final'
+    implementation 'commons-validator:commons-validator:1.7'
+    implementation 'javax.mail:mail:1.4.7'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+java {
+    sourceCompatibility = '21'
+}

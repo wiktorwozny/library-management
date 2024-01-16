@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import java.net.URL?>
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.agh.to.library.presenter.AddBookReviewPage">
+    <stylesheets>
+        <URL value="@/styles/style.css"></URL>
+    </stylesheets>
+    <VBox alignment="CENTER" prefHeight="364.0" prefWidth="467.0" spacing="10">
+        <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Dodaj recenzję" />
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label prefWidth="60" text="Ocena" />
+            <ComboBox fx:id="ratingValueComboBox" prefWidth="200">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="1" />
+                        <String fx:value="2" />
+                        <String fx:value="3" />
+                        <String fx:value="4" />
+                        <String fx:value="5" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label prefWidth="60" text="Opinia" />
+            <TextField fx:id="reviewTextField" alignment="TOP_LEFT" prefHeight="68.0" prefWidth="203.0" promptText="Podaj treść opinii" />
+        </HBox>
+
+        <Button fx:id="addButton" onAction="#handleAddButtonClick" text="Dodaj" />
+        <Button fx:id="cancelButton" onAction="#handleCancelButtonClick" text="Anuluj" styleClass="backButton"/>
+    </VBox>
+
+</StackPane>
